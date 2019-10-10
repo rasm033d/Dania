@@ -1,0 +1,9 @@
+from math import factorial #imports from math library
+
+#using the mathematical equation for Binomial coefficient allows us to calculate the amount of ways through a given grid
+#this formula is expressed by n!/(k!(n-k)!)
+def bincoe(n,k):
+    return factorial(n)/(factorial(k)*factorial(n-k))
+
+#The amount of ways through a 20x20 grid is then:
+print(bincoe(20+20,20))
