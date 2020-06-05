@@ -3,17 +3,17 @@ from pathlib import Path
 import random
 from shutil import copy
 import time 
-path = r"\\192.168.0.112\Anonymous\Storage\Testthings"
-output = r"C:\Users\Rasmus D. Hansen\Documents\test"
+path = r"<input path>"
+output = r"<output path>"
 count = 0
 while count < 100:
-    StartTime = time.time()
-    files = os.listdir(path)
-    index = random.randrange(0, len(files))
-    file = files[index]
-    filepath = os.path.join(path,file)
-    print(files[index])
-    copy(filepath, output)
-    endTime = time.time() - StartTime
-    print(endTime)
-    count = count + 1
+    StartTime = time.time() #starts time
+    files = os.listdir(path) #list of all files in directory
+    index = random.randrange(0, len(files)) #takes a random file from said directory
+    file = files[index] #sets a variual to a random file
+    filepath = os.path.join(path,file) #creates a useable OS path to the file
+    print(files[index]) #prints which file was picked
+    copy(filepath, output) #copies the file to the output folder
+    endTime = time.time() - StartTime #measures the time it takes for said copy to happen
+    print(endTime) #prints the time
+    count = count + 1 #increments the count
